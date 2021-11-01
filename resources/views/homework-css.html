@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="/resources/view/homework-css.html.css">
+    <title>MAQE Homework Challenge - CSS Styling</title>
+    <style>
+       body {
+    margin: 2rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+.grid > div {
+    background: black;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+}
+.grid > div::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    grid-area: 0.25;
+}
+.grid > div img {
+    width: 100%;
+    grid-area: 0.25;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/arch-daily.png" alt=""></div>
+        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/architectural-digest.png" alt=""></div>
+        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/architizer.png" alt=""></div>
+        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/car-and-driver.png" alt=""></div>
+      </div>
+      
+</body>
+</html>

@@ -3,18 +3,22 @@ const app = express();
 const route = require("./routes/web");
 const path = require("path");
 const ejs = require("ejs");
-
 const jsdom = require("jsdom");
 const dom = new jsdom.JSDOM("");
 const $ = require("jquery")(dom.window);
 
 const axios = require("axios");
+const { response } = require("express");
 // const homeworkCSS = path.join(__dirname,'./resources/view/homework-css.html')
+app.set("views", path.join(__dirname, "./resources/views"));
+app.set("Views Engine", "ejs");
+app.use(route);
+app.use(express.static(path.join(__dirname, "public")));
+const homeworkBlog = path.join(__dirname, "./resources/view/homework-blog.ejs");
 
-const homeworkBlog = path.join(
-    __dirname,
-    "./resources/views/homework-blog.html"
-);
+// app.get('/',(req,res)=>{
+//     // res.sendFile(homeworkCSS)
+// })
 
 app.get("/blog", (req, res) => {
     const $card = $("#card-forum .card").clone();
@@ -28,7 +32,7 @@ app.get("/blog", (req, res) => {
         .then((response) => console.log(response.data))
         .catch((err) => console.log(err));
 
-    res.render(homeworkBlog);
+    res.render("homework-blog.ejs");
 });
 
 app.listen(8080, () => {
