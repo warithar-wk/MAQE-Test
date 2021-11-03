@@ -1,10 +1,18 @@
-const express = require('express')
-const router = express()
-const path = require('path')
+const express = require("express");
+const router = express();
+const path = require("path");
 
-router.get('/',(req,res)=>{  
-    console.log('res: ', res);
-    console.log('req: ', req);
-})
+const homeworkCSS = path.join(__dirname, "../resources/view/homework-css.html");
+const homeworkBlog = path.join(
+    __dirname,
+    "../resources/view/homework-blog.html"
+);
 
+router.get("/cssbox", (req, res) => {
+    res.sendFile(homeworkCSS);
+});
+
+router.get("/blog", (req, res) => {
+    res.sendFile(homeworkBlog);
+});
 module.exports = router;

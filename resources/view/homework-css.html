@@ -1,49 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="/resources/view/homework-css.html.css">
-    <title>MAQE Homework Challenge - CSS Styling</title>
-    <style>
-       body {
-    margin: 2rem;
-}
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1rem;
-}
-.grid > div {
-    background: black;
-    padding: 1rem;
-    display: grid;
-    place-items: center;
-}
-.grid > div::before {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-    grid-area: 0.25;
-}
-.grid > div img {
-    width: 100%;
-    grid-area: 0.25;
-}
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+            rel="stylesheet"
+        />
+        <title>MAQE Homework Challenge - CSS Styling</title>
+        <style>
+            body {
+                margin: 2rem;
+                background-color: #f2f2f2;
+            }
 
+            .main {
+                width: 30rem;
+                height: 30rem;
+                border: 15px solid #67c3e9;
+                padding: 15px;
+                border-radius: 16px;
+                background-clip: content-box;
+                background-image: linear-gradient(
+                    to bottom,
+                    #6ac4e8,
+                    #73c9e1,
+                    #7fcddb,
+                    #8dd0d5,
+                    #9cd3d1
+                );
+            }
+            .box {
+                width: 12rem;
+                height: 12rem;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
 
+            .box-text {
+                font-size: 5rem;
+                font-family: "Roboto", sans-serif;
+                color: #67c3e9;
+                text-shadow: -1px 1px #a9a9a9;
+            }
 
-    </style>
-</head>
-<body>
-    <div class="grid">
-        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/arch-daily.png" alt=""></div>
-        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/architectural-digest.png" alt=""></div>
-        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/architizer.png" alt=""></div>
-        <div><img src="https://csstricks-images.s3.us-east-1.amazonaws.com/logos/car-and-driver.png" alt=""></div>
-      </div>
-      
-</body>
+            .box-shadow {
+                background-color: rgb(255, 255, 255, 0.9);
+                box-shadow: inset 1px 1px 3px rgb(0 0 0 / 30%),
+                    0px 1px 1px rgb(255 255 255 / 90%),
+                    inset 4px -2px 3px rgb(0 0 0 / 30%),
+                    inset 0px 1px 1px rgb(255 255 255 / 90%);
+                border-radius: 5 px;
+            }
+
+            .box-front {
+                position: absolute;
+            }
+            .box-center {
+                height: 30rem;
+                width: 30rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .box-center .box-item {
+                width: 15rem;
+                height: 15rem;
+                background: rgb(255, 255, 255, 20%);
+            }
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                padding: 30px;
+            }
+            .grid-item-end {
+                justify-self: end;
+            }
+            .one {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .two {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .three {
+                grid-column: 1;
+                grid-row: 2;
+            }
+            .four {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .box-inner {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: #67c3e9;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="box-front">
+                <div class="grid-container">
+                    <div class="grid-item grid-item-end">
+                        <div class="box box-text box-shadow one">M</div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="box box-text box-shadow two">A</div>
+                    </div>
+                    <div class="grid-item grid-item-end">
+                        <div class="box box-text box-shadow three">Q</div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="box box-text box-shadow four">E</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-center">
+                <div class="box-item"></div>
+            </div>
+        </div>
+    </body>
 </html>
